@@ -63,8 +63,10 @@ function Home() {
         <Hero />
         <Invitation />
         <Countdown />
-        <WeddingDetails />
-        <Venue />
+        <div className="desk-spread">
+          <WeddingDetails />
+          <Venue />
+        </div>
         <Gallery />
         <Contact />
       </main>
