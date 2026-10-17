@@ -219,6 +219,27 @@
   .hero-copy .floral {
     display: none;
   }
+  .pair-copy.keep-floral .floral {
+    display: block;
+    width: 5.25rem;
+  }
+  .pair-copy.keep-floral > :not(.floral) {
+    position: relative;
+    z-index: 1;
+  }
+  .pair-copy.keep-floral {
+    padding-top: 2.6rem;
+    padding-bottom: 2.4rem;
+  }
+  .pair-copy.keep-floral .floral-top {
+    top: 0;
+    left: 0;
+  }
+  .pair-copy.keep-floral .floral-bottom {
+    right: 0;
+    bottom: 0;
+    width: 4.75rem;
+  }
 }
 .sprig,
 .pair-copy {

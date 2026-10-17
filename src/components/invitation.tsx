@@ -35,7 +35,7 @@ export function Invitation() {
           height={1600}
           className="pair-img-alt"
         />
-        <div className="pair-copy">
+        <div className="pair-copy keep-floral">
           <Florals />
           <p className="name text-ink">{couple.bride}</p>
           <p className="font-serif text-sm font-medium tracking-widest text-ink-soft uppercase">with</p>
