@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Nithya & Sreejith — Wedding Invitation",
+      "hasCanvas": false,
+      "bodyTextLen": 2215,
+      "bodyTextHash": "fc4403de9f29e41909f2156bcf0f69a059f166e12e87dba67a143122cf959e86",
+      "bodyTextPrefix": "Skip to invitation Nithya & Sreejith Home Couple Wedding Venue P",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Nithya & Sreejith — Wedding Invitation",
+      "hasCanvas": false,
+      "bodyTextLen": 2211,
+      "bodyTextHash": "119cc930188788758bf72e7301986e931a2c783e08bc30c803a13dfe26fc6490",
+      "bodyTextPrefix": "Skip to invitation Nithya & Sreejith OM NAMO BHAGAVATHE VASUDEVA",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}
