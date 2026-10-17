@@ -5,14 +5,14 @@ import { couple, nav } from "@/data/wedding";
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-cream/95 backdrop-blur-md">
-      <div className="mx-auto grid h-14 max-w-5xl grid-cols-1 items-center px-4 md:grid-cols-[1fr_auto_1fr]">
+      <div className="mx-auto flex h-14 max-w-none items-center justify-center px-4 md:justify-between md:px-8 md:pr-16">
         <a
           href="#home"
-          className="text-center font-serif text-lg font-medium tracking-wide text-ink sm:text-xl md:col-start-2"
+          className="text-center font-serif text-lg font-medium tracking-wide text-ink sm:text-xl md:text-left"
         >
           {couple.bride} & {couple.groom}
         </a>
-        <nav aria-label="Sections" className="hidden items-center justify-end gap-6 md:col-start-3 md:flex">
+        <nav aria-label="Sections" className="hidden items-center justify-end gap-6 md:flex">
           {nav.map((item) => (
             <a
               key={item.href}
