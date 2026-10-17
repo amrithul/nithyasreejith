@@ -36,18 +36,24 @@ function requestHost(event: GrokPwaEvent): string {
   );
 }
 
-async function injectHead(response: Response, host: string): Promise<Response> {
-  const html = await response.text();
+function injectHeadStreaming(response: Response, host: string): Response {
   const injector = createHeadInjector({
     host,
     site: grokOgIdentity.site,
   });
-  const parts: Uint8Array[] = [];
-  for (const out of injector.push(new TextEncoder().encode(html))) parts.push(out);
-  for (const out of injector.flush()) parts.push(out);
+  const transformed = response.body!.pipeThrough(
+    new TransformStream<Uint8Array, Uint8Array>({
+      transform(chunk, controller) {
+        for (const out of injector.push(chunk)) controller.enqueue(out);
+      },
+      flush(controller) {
+        for (const out of injector.flush()) controller.enqueue(out);
+      },
+    }),
+  );
   const headers = new Headers(response.headers);
   headers.delete("content-length");
-  return new Response(new Blob(parts), {
+  return new Response(transformed, {
     status: response.status,
     statusText: response.statusText,
     headers,
@@ -99,7 +105,7 @@ export default async function grokPwaMiddleware(
     String(result.headers.get("content-type") ?? "").includes("text/html") &&
     !result.headers.get("content-encoding")
   ) {
-    return injectHead(result, requestHost(event));
+    return injectHeadStreaming(result, requestHost(event));
   }
   return result;
 }
