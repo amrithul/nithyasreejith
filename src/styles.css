@@ -846,6 +846,7 @@
   }
   .rings-frame img {
     filter: brightness(0.84);
+    transform: translateY(-58%);
   }
   .pair-copy {
     display: flex;
