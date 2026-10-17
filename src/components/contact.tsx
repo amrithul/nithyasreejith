@@ -2,7 +2,6 @@ import { Phone } from "lucide-react";
 import { brideFamily, waMe } from "@/data/wedding";
 import { Eyebrow, Ornament } from "@/components/ornament";
 import { WhatsAppIcon } from "@/components/whatsapp-icon";
-import { ZoomPhoto } from "@/components/zoom-photo";
 import { Florals } from "@/components/florals";
 
 export function Contact() {
@@ -16,15 +15,13 @@ export function Contact() {
         </h2>
         <Ornament className="mt-6" />
         <div className="contact-body mt-8">
-          <ZoomPhoto
+          <img
             src="/photos/family.jpg"
             alt="Nithya and Sreejith standing with family before a floral arch"
             width={1600}
             height={1067}
             loading="lazy"
-            origin="center center"
-            wrapClassName="photo-frame"
-            className="block w-full"
+            className="family-photo photo-frame"
           />
           <div>
             <p className="mt-8 font-serif text-lg font-bold text-ink lg:mt-0">Contact us on</p>

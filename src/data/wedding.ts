@@ -5,8 +5,6 @@ export const couple = {
   groom: "Sreejith",
 } as const;
 
-export const mantra = "Om Namo Bhagavathe Vasudevaya";
-
 export const motto = "Two Souls One Journey";
 
 export const invitationLines = [

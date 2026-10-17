@@ -109,7 +109,7 @@
   font-family: var(--font-script);
   font-weight: 400;
   line-height: 1.15;
-  font-size: clamp(3rem, 13.5vw, 5rem);
+  font-size: clamp(2.7rem, 11vw, 4.25rem);
 }
 
 .section {
@@ -332,9 +332,26 @@
 .pair-img-alt {
   object-position: center 10%;
 }
-.pair-img-rings {
-  aspect-ratio: 4 / 5;
-  object-position: center 58%;
+.pair > img.pair-img-rings {
+  object-position: center bottom;
+}
+.rings-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+.rings-frame img {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  aspect-ratio: auto;
+  object-fit: fill;
+  transform: translateY(-76%);
 }
 .pair-copy {
   position: relative;
@@ -666,7 +683,7 @@
     width: 100%;
     height: 100%;
     max-width: none;
-    padding: 3rem 3.5rem;
+    padding: 3.5rem 3.25rem 3.5rem 9.5rem;
     text-align: left;
     background: var(--color-cream);
     color: var(--color-ink);
@@ -688,29 +705,65 @@
     user-select: none;
   }
   .sprig {
-    overflow: hidden;
+    overflow: visible;
   }
-  .sprig .floral {
-    width: min(16rem, 28vw);
+  .sprig .floral,
+  .pair-copy .floral {
+    width: 13rem;
+    max-width: 34%;
+    height: auto;
   }
+  .sprig .floral-top,
   .pair-copy .floral-top {
-    top: -1rem;
-    left: -1.5rem;
-    width: min(14rem, 48%);
+    top: 0.75rem;
+    left: 0.75rem;
+    right: auto;
+    bottom: auto;
   }
+  .sprig .floral-bottom,
   .pair-copy .floral-bottom {
-    right: -1rem;
-    bottom: -2rem;
-    width: min(13rem, 44%);
+    top: auto;
+    left: auto;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    width: 12rem;
+    max-width: 32%;
+  }
+  .family-photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center center;
   }
   .floral-top {
     top: -0.5rem;
     left: -1.25rem;
   }
+  .hero-copy .floral-top {
+    top: -0.25rem;
+    left: -2.25rem;
+    width: min(15rem, 40%);
+  }
+  .hero-copy .floral-bottom {
+    top: auto;
+    left: auto;
+    right: 0;
+    bottom: 0;
+    width: min(13rem, 36%);
+  }
   .floral-bottom {
     right: -1rem;
     bottom: -1.5rem;
     width: min(20rem, 52%);
+  }
+  .hero-copy .name,
+  .hero-copy h1 .name,
+  .pair-copy .name,
+  .name {
+    font-size: 3.35rem;
+    font-weight: 400;
+    line-height: 1.05;
   }
   .hero-copy .name,
   .hero-copy h1,
@@ -761,7 +814,8 @@
     grid-template-columns: 1.15fr 0.85fr;
     align-items: stretch;
     max-width: none;
-    min-height: calc(100svh - 3.5rem);
+    height: 34rem;
+    min-height: 0;
     margin: 0;
   }
   .pair:nth-of-type(even) > :first-child {
@@ -769,15 +823,28 @@
   }
   .pair > img,
   .pair > .zoom-frame {
-    height: auto;
-    min-height: calc(100svh - 3.5rem);
+    height: 34rem;
+    min-height: 0;
+    max-height: 34rem;
   }
   .pair > img,
   .zoom-frame,
   .zoom-frame img {
-    height: 100%;
-    min-height: calc(100svh - 3.5rem);
+    height: 34rem;
+    min-height: 0;
+    max-height: 34rem;
     aspect-ratio: auto;
+    filter: brightness(0.84);
+  }
+  .pair > img.pair-img-rings {
+    object-position: center bottom;
+  }
+  .pair > .rings-frame {
+    height: 34rem;
+    max-height: 34rem;
+    aspect-ratio: auto;
+  }
+  .rings-frame img {
     filter: brightness(0.84);
   }
   .pair-copy {
@@ -787,6 +854,7 @@
     width: auto;
     margin: 0;
     padding: 3rem 3.5rem;
+    overflow: visible;
   }
   .invite-request {
     max-width: 28rem;

@@ -1,4 +1,4 @@
-import { brideFamily, closingLines, compliments, couple, groomFamily, invitationLines, mantra } from "@/data/wedding";
+import { brideFamily, closingLines, compliments, couple, groomFamily, invitationLines } from "@/data/wedding";
 import { Ornament } from "@/components/ornament";
 import { Florals } from "@/components/florals";
 import { ZoomPhoto } from "@/components/zoom-photo";
@@ -6,22 +6,6 @@ import { ZoomPhoto } from "@/components/zoom-photo";
 export function Invitation() {
   return (
     <section id="invitation" className="letter" aria-labelledby="invitation-title">
-      <div className="letter-head">
-        <div className="letter-arch">
-          <img
-            src="/card/temple.jpg"
-            alt="Kerala temple illustrated on the wedding invitation"
-            width={448}
-            height={228}
-            className="relative w-full max-w-xs"
-          />
-        </div>
-        <p className="mt-4 font-serif text-sm font-medium tracking-widest text-ink-soft uppercase">
-          {mantra}
-        </p>
-        <Ornament className="mt-4" />
-      </div>
-
       <article className="pair">
         <img
           src="/photos/close.jpg"
@@ -65,13 +49,15 @@ export function Invitation() {
       </article>
 
       <article className="pair">
-        <img
-          src="/photos/rings.jpg"
-          alt="Nithya and Sreejith holding their rings, her hand decorated with henna"
-          width={1066}
-          height={1600}
-          className="pair-img-rings"
-        />
+        <div className="rings-frame">
+          <img
+            src="/photos/rings.jpg"
+            alt="Nithya and Sreejith holding their rings, her hand decorated with henna"
+            width={1066}
+            height={1600}
+            className="pair-img-rings"
+          />
+        </div>
         <div className="pair-copy">
           <Florals />
           <div className="space-y-1 font-serif text-lg text-ink">

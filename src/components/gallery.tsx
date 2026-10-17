@@ -52,7 +52,7 @@ export function Gallery() {
                 width={item.width}
                 height={item.height}
                 loading="lazy"
-                className="frame-portrait w-full object-cover object-top"
+                className={`${item.wide ? "frame-wide" : "frame-portrait"} w-full object-cover object-[center_30%]`}
               />
             </button>
           </li>

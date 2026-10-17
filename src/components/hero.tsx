@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { mantra, motto, when } from "@/data/wedding";
+import { motto, when } from "@/data/wedding";
 
 export function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -60,10 +60,7 @@ export function Hero() {
         >
           <img src="/decor/floral-top.png" alt="" className="floral floral-top" />
           <img src="/decor/floral-bottom.png" alt="" className="floral floral-bottom" />
-          <p className="font-serif text-sm font-medium tracking-widest text-cream/80 uppercase">
-            {mantra}
-          </p>
-          <h1 className="mt-4 text-cream">
+          <h1 className="text-cream">
             <span className="name block">Nithya</span>
             <span className="my-1 block font-serif text-sm font-medium tracking-widest uppercase">with</span>
             <span className="name block">Sreejith</span>
