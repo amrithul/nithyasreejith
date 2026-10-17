@@ -3,6 +3,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { gallery } from "@/data/wedding";
 import { Eyebrow } from "@/components/ornament";
+import { Florals } from "@/components/florals";
 
 export function Gallery() {
   const [index, setIndex] = useState<number | null>(null);
@@ -27,7 +28,8 @@ export function Gallery() {
   }, [open, go]);
 
   return (
-    <section id="gallery" className="section" aria-labelledby="gallery-title">
+    <section id="gallery" className="section sprig" aria-labelledby="gallery-title">
+      <Florals />
       <div className="mx-auto max-w-5xl text-center">
         <Eyebrow>Photographs</Eyebrow>
         <h2 id="gallery-title" className="mt-2 font-serif text-4xl font-medium text-ink sm:text-5xl">

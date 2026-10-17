@@ -1,6 +1,7 @@
 import { MapPin, Share2 } from "lucide-react";
 import { venue, whatsAppShareText, when } from "@/data/wedding";
 import { Eyebrow, QuietButton, QuietLink } from "@/components/ornament";
+import { Florals } from "@/components/florals";
 
 function shareWhatsApp() {
   const text = whatsAppShareText(window.location.href);
@@ -22,7 +23,8 @@ const facts = [
 
 export function WeddingDetails() {
   return (
-    <section id="wedding" className="section" aria-labelledby="wedding-title">
+    <section id="wedding" className="section sprig" aria-labelledby="wedding-title">
+      <Florals />
       <div className="mx-auto max-w-xl">
         <Eyebrow>The wedding</Eyebrow>
         <h2 id="wedding-title" className="mt-3 text-center font-serif text-4xl font-medium text-balance text-ink sm:text-5xl">

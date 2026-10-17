@@ -1,5 +1,6 @@
 import { brideFamily, closingLines, compliments, couple, groomFamily, invitationLines, mantra } from "@/data/wedding";
 import { Ornament } from "@/components/ornament";
+import { Florals } from "@/components/florals";
 import { ZoomPhoto } from "@/components/zoom-photo";
 
 export function Invitation() {
@@ -29,6 +30,7 @@ export function Invitation() {
           height={1600}
         />
         <div className="pair-copy">
+          <Florals />
           <p className="invite-parents">{brideFamily.parents}</p>
           <p className="invite-place">
             {brideFamily.house}
@@ -50,6 +52,7 @@ export function Invitation() {
           className="pair-img-alt"
         />
         <div className="pair-copy">
+          <Florals />
           <p className="name text-ink">{couple.bride}</p>
           <p className="font-serif text-sm font-medium tracking-widest text-ink-soft uppercase">with</p>
           <p className="name text-ink">{couple.groom}</p>
@@ -70,6 +73,7 @@ export function Invitation() {
           className="pair-img-rings"
         />
         <div className="pair-copy">
+          <Florals />
           <div className="space-y-1 font-serif text-lg text-ink">
             {closingLines.map((line) => (
               <p key={line}>{line}</p>

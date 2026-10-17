@@ -3,10 +3,12 @@ import { brideFamily, waMe } from "@/data/wedding";
 import { Eyebrow, Ornament } from "@/components/ornament";
 import { WhatsAppIcon } from "@/components/whatsapp-icon";
 import { ZoomPhoto } from "@/components/zoom-photo";
+import { Florals } from "@/components/florals";
 
 export function Contact() {
   return (
-    <section id="contact" className="section bg-cream-deep" aria-labelledby="contact-title">
+    <section id="contact" className="section sprig bg-cream-deep" aria-labelledby="contact-title">
+      <Florals />
       <div className="mx-auto max-w-3xl text-center">
         <Eyebrow>Contact</Eyebrow>
         <h2 id="contact-title" className="mt-3 font-serif text-4xl font-medium text-balance text-ink sm:text-5xl">

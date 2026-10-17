@@ -401,18 +401,22 @@ function createHeadInjector(ctx = {}) {
 function requestHost(event) {
 	return event.req.headers.get("x-forwarded-host") ?? event.req.headers.get("host") ?? event.url.host;
 }
-async function injectHead(response, host) {
-	const html = await response.text();
+function injectHeadStreaming(response, host) {
 	const injector = createHeadInjector({
 		host,
 		site: grokOgIdentity.site
 	});
-	const parts = [];
-	for (const out of injector.push(new TextEncoder().encode(html))) parts.push(out);
-	for (const out of injector.flush()) parts.push(out);
+	const transformed = response.body.pipeThrough(new TransformStream({
+		transform(chunk, controller) {
+			for (const out of injector.push(chunk)) controller.enqueue(out);
+		},
+		flush(controller) {
+			for (const out of injector.flush()) controller.enqueue(out);
+		}
+	}));
 	const headers = new Headers(response.headers);
 	headers.delete("content-length");
-	return new Response(new Blob(parts), {
+	return new Response(transformed, {
 		status: response.status,
 		statusText: response.statusText,
 		headers
@@ -438,7 +442,7 @@ async function grokPwaMiddleware(event, next) {
 	}
 	if (!isDocumentPath(path)) return next();
 	const result = await next();
-	if (result instanceof Response && result.body && String(result.headers.get("content-type") ?? "").includes("text/html") && !result.headers.get("content-encoding")) return injectHead(result, requestHost(event));
+	if (result instanceof Response && result.body && String(result.headers.get("content-type") ?? "").includes("text/html") && !result.headers.get("content-encoding")) return injectHeadStreaming(result, requestHost(event));
 	return result;
 }
 //#endregion

@@ -1,10 +1,12 @@
 import { MapPin, Navigation } from "lucide-react";
 import { mapsDirectionsUrl, venue } from "@/data/wedding";
 import { Eyebrow, PrimaryLink } from "@/components/ornament";
+import { Florals } from "@/components/florals";
 
 export function Venue() {
   return (
-    <section id="venue" className="section" aria-labelledby="venue-title">
+    <section id="venue" className="section sprig" aria-labelledby="venue-title">
+      <Florals />
       <div className="mx-auto max-w-3xl text-center">
         <Eyebrow>The venue</Eyebrow>
         <h2 id="venue-title" className="mt-3 font-serif text-4xl font-medium text-balance text-ink sm:text-5xl">

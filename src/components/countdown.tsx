@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Heart } from "lucide-react";
 import { when } from "@/data/wedding";
+import { Florals } from "@/components/florals";
 
 const start = new Date(when.startIso).getTime();
 
@@ -38,7 +39,8 @@ export function Countdown() {
   }, []);
 
   return (
-    <section className="section bg-ink text-cream" aria-labelledby="countdown-title">
+    <section className="section sprig bg-ink text-cream" aria-labelledby="countdown-title">
+      <Florals />
       <div className="mx-auto max-w-3xl text-center">
         <p className="font-serif text-sm font-medium tracking-widest text-cream/70 uppercase">
           {when.day}, {when.date}

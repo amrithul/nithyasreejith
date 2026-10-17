@@ -58,6 +58,8 @@ export function Hero() {
           className="hero-copy reveal-page"
           style={{ opacity: pageOpacity, pointerEvents: pageOpacity > 0.85 ? "auto" : "none" }}
         >
+          <img src="/decor/floral-top.png" alt="" className="floral floral-top" />
+          <img src="/decor/floral-bottom.png" alt="" className="floral floral-bottom" />
           <p className="font-serif text-sm font-medium tracking-widest text-cream/80 uppercase">
             {mantra}
           </p>

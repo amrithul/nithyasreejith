@@ -1,9 +1,11 @@
 import { compliments, couple, motto, when } from "@/data/wedding";
 import { Ornament } from "@/components/ornament";
+import { Florals } from "@/components/florals";
 
 export function SiteFooter() {
   return (
-    <footer className="section text-center">
+    <footer className="section sprig text-center">
+      <Florals />
       <Ornament />
       <p className="mt-6 font-serif text-lg text-ink">With love and blessings,</p>
       <p className="name text-ink">{couple.bride}</p>
