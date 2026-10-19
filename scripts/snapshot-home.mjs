@@ -19,7 +19,10 @@ const response = await handler.fetch(
     headers: { accept: "text/html", host: "invitation.local" },
   }),
 );
-const html = await response.text();
+const html = (await response.text()).replaceAll(
+  "https://invitation.local",
+  "https://nithyasreejith.vercel.app",
+);
 if (response.status !== 200 || !html.includes("<html")) {
   console.error("[snapshot-home] render failed", response.status);
   console.error(html.slice(0, 500));
